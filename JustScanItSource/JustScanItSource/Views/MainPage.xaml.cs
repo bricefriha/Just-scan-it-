@@ -26,17 +26,19 @@ namespace JustScanItSource.Views
             MasterBehavior = MasterBehavior.Popover;
 
             // Add the default page to the dictionary
-            this.MenuPages.Add((int)MenuItemType.Scan, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Scan, (NavigationPage)Detail);
         }
+
+        
 
         /// <summary>
         /// Method which allows the navigation on the menu
         /// </summary>
         /// <param name="id">id of the page</param>
         /// <returns></returns>
-        public async Task NavigationFromMenu(int id)
+        public async Task NavigateFromMenu(int id)
         {
-            // If the ID exist
+            // If the page is not already opened
             if (!MenuPages.ContainsKey(id))
             {
                 // Select the page linked to the id
@@ -55,25 +57,25 @@ namespace JustScanItSource.Views
                     //
                     // Do the same for every new page ...
                 }
-
-                // Get the page
-                var newPage = MenuPages[id];
-
-                // If this new page exist and is different than the previous one
-                if (newPage != null && Detail != newPage)
-                {
-                    // Set the new page
-                    Detail = newPage;
-
-                    // If the smartphone is Running android
-                    if (Device.RuntimePlatform == Device.Android)
-                        // Set a timeout
-                        await Task.Delay(100);
-
-                    IsPresented = false;
-
-                }
             }
+            // Get the page
+            var newPage = MenuPages[id];
+
+            // If this new page exist and is different than the previous one
+            if (newPage != null && Detail != newPage)
+            {
+                // Set the new page
+                Detail = newPage;
+
+                // If the smartphone is Running android
+                if (Device.RuntimePlatform == Device.Android)
+                    // Set a timeout
+                    await Task.Delay(100);
+
+                IsPresented = false;
+
+            }
+            
         }
     }
 }

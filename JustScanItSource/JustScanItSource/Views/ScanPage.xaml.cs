@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JustScanItSource.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace JustScanItSource.Views
         public ScanPage()
         {
             InitializeComponent();
+            BindingContext = new ScanViewModel();
         }
     }
 }

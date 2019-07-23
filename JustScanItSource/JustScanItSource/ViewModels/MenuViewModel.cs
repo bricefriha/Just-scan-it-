@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace JustScanItSource.ViewModels
 {
@@ -19,7 +20,7 @@ namespace JustScanItSource.ViewModels
             }
         }
         // Constructor
-        public MenuViewModel()
+        public MenuViewModel(ListView lv)
         {
             // Menu instanciation
             this.menuItems = new List<HomeMenuItem>
@@ -27,6 +28,10 @@ namespace JustScanItSource.ViewModels
                 new HomeMenuItem {Id = MenuItemType.Scan, Title="Scan"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="About"},
             };
+
+            lv.ItemsSource = menuItems;
+
+            lv.SelectedItem = menuItems[0];
         }
 
     }
