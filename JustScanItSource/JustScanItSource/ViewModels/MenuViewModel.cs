@@ -1,4 +1,5 @@
 ﻿using JustScanItSource.Models;
+using JustScanItSource.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,7 @@ namespace JustScanItSource.ViewModels
 {
     public class MenuViewModel : BaseViewModel
     {
+        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         private List<HomeMenuItem> menuItems;
         public List<HomeMenuItem> MenuItems
         {
@@ -29,9 +31,23 @@ namespace JustScanItSource.ViewModels
                 new HomeMenuItem {Id = MenuItemType.About, Title="About"},
             };
 
+            #region Listview settings
+            // Set items source
             lv.ItemsSource = menuItems;
 
+            // Set the selected item
             lv.SelectedItem = menuItems[0];
+
+            // Beheviour when a new item is selected
+            lv.ItemSelected += async (sender, e) =>
+            {
+                if (e.SelectedItem == null)
+                    return;
+
+                var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                await RootPage.NavigateFromMenu(id);
+            };
+            #endregion
         }
 
     }

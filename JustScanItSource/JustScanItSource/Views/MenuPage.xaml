@@ -17,8 +17,7 @@
                 <StackLayout VerticalOptions="FillAndExpand" >
                     <ListView x:Name="ListViewMenu"
                               HasUnevenRows="True"
-                              ItemsSource="{Binding MenuItems}"
-                              ItemTapped="ListViewMenu_ItemTapped">
+                              ItemsSource="{Binding MenuItems}">
                         <d:ListView.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
                                 <x:String>Item 1</x:String>
