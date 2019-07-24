@@ -4,11 +4,11 @@ using System.Text;
 
 namespace JustScanItSource.ViewModels
 {
-    public class ScanViewModel : BaseViewModel
+    public class HistoryViewModel : BaseViewModel
     {
-        public ScanViewModel()
+        public HistoryViewModel()
         {
-            this.Title = "Let's scan !";
+            this.Title = "History";
         }
     }
 }

@@ -11,6 +11,7 @@ namespace JustScanItSource.Models
     {
         Scan,
         About,
+        History,
         //CellPhoneNum,
         //
         // Do the same for every new page ...

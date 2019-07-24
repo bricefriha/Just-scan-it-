@@ -29,6 +29,7 @@ namespace JustScanItSource.ViewModels
             {
                 new HomeMenuItem {Id = MenuItemType.Scan, Title="Scan"},
                 new HomeMenuItem {Id = MenuItemType.About, Title="About"},
+                new HomeMenuItem {Id = MenuItemType.History, Title="History"},
             };
 
             #region Listview settings

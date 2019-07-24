@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="JustScanItSource.Views.ScanPage"
-             Title="Let's scan">
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="scan!"

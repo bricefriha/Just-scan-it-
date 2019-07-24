@@ -54,6 +54,11 @@ namespace JustScanItSource.Views
                         // Open the Scan Page
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    // History page
+                    case (int)MenuItemType.History:
+                        // Open the Scan Page
+                        MenuPages.Add(id, new NavigationPage(new HistoryPage()));
+                        break;
                     //
                     // Do the same for every new page ...
                 }
